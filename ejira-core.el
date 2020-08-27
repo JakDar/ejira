@@ -576,7 +576,7 @@ the content of parent heading."
         nil t)
        (narrow-to-region
         (point)
-        (if exclude-subheadings
+        (if ,exclude-subheadings
             (save-excursion (outline-next-heading) (point-marker))
           (point-max)))
        ,@body)))

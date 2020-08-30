@@ -234,7 +234,7 @@ key is given if the value is a key/value pair."
                                               'remainingEstimateSeconds)
         :sprint (ejira-get-sprint-name (ejira--alist-get item 'fields
                                                          ejira-sprint-field))
-        :parent (when (equal type ejira-subtask-type-name)
+        :parent (when (not (equal type ejira-epic-type-name))
                   (ejira--alist-get item 'fields 'parent 'key))
         :priority (ejira--alist-get item 'fields 'priority 'name)
         :summary (ejira--parse-body (ejira--alist-get item 'fields 'summary))

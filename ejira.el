@@ -222,7 +222,7 @@ With prefix argument FOCUS, focus the issue after creating."
          (key (when project-id (ejira--heading-to-item heading project-id
                                                        ejira-subtask-type-name
                                                        nil
-                                                       (parent . ((key . ,story)))))))
+                                                       `(parent . ((key . ,story)))))))
     (when (and key focus)
       (ejira-focus-on-issue key))))
 
